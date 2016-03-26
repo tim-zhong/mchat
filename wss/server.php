@@ -77,7 +77,7 @@ class Server extends WebSocketServer{
 	protected function createobjstr($keys,$values){
 		$result = "{";
 		foreach($arr as $key=>$value){
-			$result.='"'.$keys.'":"'.$value.'",';
+			$result.='"'.$key.'":"'.$value.'",';
 		}
 		$result .= "}";
 		return $result;
