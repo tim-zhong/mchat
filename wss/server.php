@@ -79,7 +79,7 @@ class Server extends WebSocketServer{
 		foreach($arr as $key=>$value){
 			$result.='"'.$key.'":"'.$value.'",';
 		}
-		trim($result, ",");
+		$result=rtrim($result, ",");
 		$result .= "}";
 		return $result;
 	}
