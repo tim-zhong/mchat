@@ -1,5 +1,5 @@
 <?php
-//include_once "../connect.php";
+include "connect.php";
 require "Websockets/websockets.php";
 
 
@@ -32,13 +32,6 @@ class Server extends WebSocketServer{
 
 	protected function closed($user){
 		unset($this->users[$user->id]);
-
-		$cmd = 'remove';
-		$result = '{"userid":"'.$user->id.'","name":"","message":"","cmd":"'.$cmd.'"}';
-		foreach($this->users as $u){
-			$this->send($u, $result);
-		}
-		echo "User $user->id closed connection ".PHP_EOL;
 	}
 
 	public function __destruct(){
@@ -50,7 +43,9 @@ class Server extends WebSocketServer{
 
 	//Helpers
 	protected function register($userid,$username,$roomname){
-		$this->send($this->users[$userid],$username.'is registering...');
+		$this->send($this->users[$userid],$username.' is registering...');
+		$this->users[$userid]->roomname = $roomname;
+
 	}
 }
 
