@@ -32,7 +32,7 @@ function findusers(){
 <head>
 	<meta charset="utf-8">
 
-	<title>The HTML5</title>
+	<title>MapChat Room</title>
 	<meta name="description" content="The HTML5">
 </head>
 
@@ -73,9 +73,8 @@ function findusers(){
 	</table>
 
 	<script src="jquery.js"></script>
-	<script
-      src="http://maps.googleapis.com/maps/api/js">
-    </script>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script src="wss/wss.js"></script>
 	<script>
 	var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
@@ -114,9 +113,17 @@ function findusers(){
 	        })(marker, i));
 	}
 
+// ======================= websockets ================= //
+
+	var socket = null;
+	var url = "ws://http://timzhong.com:9898";
+	connect(socket,url);
+	
+
+// ==================================================== //
+
 	var markers = <?php echo findusers();?>;
 	document.getElementById('people-number').innerHTML = markers.length;
-
 	for( i = 0; i < markers.length; i++ ) {
 		addmarker(markers[i][0],markers[i][1],markers[i][2]);
 	}

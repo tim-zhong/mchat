@@ -11,7 +11,7 @@ class Server extends WebSocketServer{
 
 	protected function connected($user){
 		$this->users[$user->id]=$user;
-		$this->send($user,$this->welcome);
+		$this->send($user,$this->_welcome);
 	}
 
 	protected function process($user,$message){
@@ -42,7 +42,7 @@ class Server extends WebSocketServer{
 }
 
 $addr = 'localhost';
-$port = '9898';
+$port = '9897';
 
 $server = new Server($addr,$port);
 $server->run();
