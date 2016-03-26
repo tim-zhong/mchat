@@ -41,7 +41,7 @@ class Server extends WebSocketServer{
 	}
 }
 
-$addr = 'timzhong.com';
+$addr = 'ec2-52-37-132-185.us-west-2.compute.amazonaws.com/mapchat/wss';
 $port = '9897';
 
 $server = new Server($addr,$port);

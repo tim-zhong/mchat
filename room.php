@@ -116,7 +116,7 @@ function findusers(){
 // ======================= websockets ================= //
 
 	var socket = null;
-	var url = "ws://http://timzhong.com:9897/wss";
+	var url = "ws://ec2-52-37-132-185.us-west-2.compute.amazonaws.com/mapchat/wss:9897";
 	connect(socket,url);
 	
 
