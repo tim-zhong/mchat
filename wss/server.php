@@ -50,7 +50,7 @@ class Server extends WebSocketServer{
 
 	//Helpers
 	protected function register($userid,$username,$roomname){
-		$this->send($users[$userid],$username' registering...');
+		$this->send($users[$userid],$username.'is registering...');
 	}
 }
 
