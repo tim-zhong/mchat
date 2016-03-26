@@ -15,7 +15,7 @@ class Server extends WebSocketServer{
 	}
 
 	protected function process($user,$message){
-		$obj = json_decode($message,true);
+		$obj = json_decode($message);
 		$cmd = $obj->{'type'};
 
 		switch($cmd){
