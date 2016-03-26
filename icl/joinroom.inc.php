@@ -50,7 +50,7 @@ function joinroom($name,$roomname,$latitude,$longitude){
 
 					}
 				} else {
-					echo "Sorry, the name you entered has been taken"
+					echo "Sorry, the name you entered has been taken";
 				}
 			} else {
 
