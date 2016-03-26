@@ -16,6 +16,7 @@ class Server extends WebSocketServer{
 
 	protected function process($user,$message){
 		$obj = json_decode($message);
+		$this->send($user,print_r($obj));
 		$cmd = $obj->{'type'};
 
 		switch($cmd){
@@ -50,7 +51,7 @@ class Server extends WebSocketServer{
 
 	//Helpers
 	protected function register($userid,$username,$roomname){
-		$this->send($users[$userid],$username.'is registering...');
+		$this->send($this->users[$userid],$username.'is registering...');
 	}
 }
 
