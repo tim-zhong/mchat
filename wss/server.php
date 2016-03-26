@@ -58,17 +58,25 @@ class Server extends WebSocketServer{
 
 		foreach($this->users as $u){
 			//skip itself
-			if($u->userid == $userid) continue;
-			$cmd1 = 'geo';
+			//if($u->id == $userid) continue;
+			$cmd = 'addmarker';
 			$result = '{"userid":"'.$user->id.'","name":"'.$username.'","lat":"'.$lat.'","lng":"'.$lng.'","cmd":"'.$cmd.'"}';
+			$arr = array(
+				"userid"=>$user->id,
+				"name"=>$username,
+				"lat"=>$lat,
+				"lng"=>$lng,
+				"cmd"=>$cmd
+			);
+			$result1 = self::createobjstr($arr);
 			$this->send($u, $result);
+			$this->send($u, $result1);
 		}
 
 	}
 	protected function createobjstr($keys,$values){
 		$result = "{";
-		foreach($keys as $index=>$key){
-			$value = $values[$index];
+		foreach($arr as $key=>$value){
 			$result.='"'.$keys.'":"'.$value.'",';
 		}
 		$result .= "}";

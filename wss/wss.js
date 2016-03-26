@@ -52,7 +52,7 @@ function register(socket,username,roomname){
 
 function processobj(s){
 	var obj = JSON.parse(s);
-	if(obj.cmd == 'geo'){
+	if(obj.cmd == 'addmarker'){
 		
 	}
 }
