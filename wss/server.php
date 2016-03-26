@@ -23,7 +23,7 @@ class Server extends WebSocketServer{
 				$username = $obj{'username'};
 				$roomname = $obj{'roomname'};
 				$userid = $user->id;
-				register($userid,$username,$roomname);
+				self::register($userid,$username,$roomname);
 				break;
 			default:
 				$this->send($user, 'failed to register');
