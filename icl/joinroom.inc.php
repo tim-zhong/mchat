@@ -20,23 +20,37 @@ function joinroom($name,$roomname,$latitude,$longitude){
 
 			$userexist = db_row_exists($db,'users','userip',$ip);
 			if($multiroom || !$userexist){
+				$nametaken = 0;
+				$query = "select * from users where roomid = '".$roomid."'";
+				$rs = sql_query($query,$db);
+				while($user = sql_fetch_array($rs)){
+					if($user['username']==$name){
+						$nametaken = 1;
+						break;
+					}
+				}
 
-				$query = "INSERT INTO users (username,userip,roomid,longitude,latitude,lastupdate) VALUES ('".$name."','".$ip."',$roomid,$longitude,$latitude,'".$time."')";
-				$userid=sql_insert_id();
+				if(!$nametaken){
 
-				if(sql_query($query,$db)){
-
-					$query = "UPDATE rooms SET usercount = usercount + 1 WHERE roomid=$roomid";
+					$query = "INSERT INTO users (username,userip,roomid,longitude,latitude,lastupdate) VALUES ('".$name."','".$ip."',$roomid,$longitude,$latitude,'".$time."')";
+					$userid=sql_insert_id();
 
 					if(sql_query($query,$db)){
 
-						setcookie('user',$userid);
-						?>
-						<a href="<?php echo 'room.php?room='.$roomname;?>"><div class="button button-green">Room Found</div></a>
-						<?php
+						$query = "UPDATE rooms SET usercount = usercount + 1 WHERE roomid=$roomid";
+
+						if(sql_query($query,$db)){
+
+							setcookie('user',$userid);
+							?>
+							<a href="<?php echo 'room.php?room='.$roomname;?>"><div class="button button-green">Room Found</div></a>
+							<?php
+
+						}
 
 					}
-
+				} else {
+					echo "Sorry, the name you entered has been taken"
 				}
 			} else {
 
