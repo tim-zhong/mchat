@@ -44,6 +44,7 @@ class Server extends WebSocketServer{
 
 	//Helpers
 	protected function register($userid,$username,$roomname){
+		global $db;
 		$this->send($this->users[$userid],$username.' is registering...');
 		$this->users[$userid]->roomname = $roomname;
 
