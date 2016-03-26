@@ -51,14 +51,15 @@ class Server extends WebSocketServer{
 		$this->send($this->users[$userid],"aaa");
 		//Query the coordinates of the user
 		$query = "select latitude,longitude from users where roomid = (select roomid from rooms where roomname = '".$roomname."' limit 1) limit 1";
-		$this->send($this->users[$userid],"aaa");
 		$rs = sql_query($query, $db);
 		$user = sql_fetch_array($rs);
 		$lat = $user['latitude'];
 		$lng = $user['longitude'];
 
+		foreach($this->users as $u){
+			$this->send($u, $username." has joined the room with latitude ".$lat." and longitude ".$lng);
+		}
 
-		$this->send($this->users[$userid],$lat."---".$lng);
 	}
 }
 
