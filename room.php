@@ -76,6 +76,15 @@ function findusers(){
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script src="wss/wss.js"></script>
 	<script>
+	// ======================= websockets ================= //
+
+	var socket = null;
+	var url = "ws://http://timzhong.com:9897/wss";
+	connect(socket,url);
+	
+
+// ==================================================== //
+
 	var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         mapTypeId: 'roadmap'
