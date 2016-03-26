@@ -55,7 +55,7 @@ function processasobj(s){
 	var obj = JSON.parse(s);
 	if(obj.cmd == 'addmarker'){
 		console.log('userid: '+obj.userid);
-		console.log('username: '+obj.username);
+		console.log('username: '+obj.name);
 		console.log('lat: '+obj.lat);
 		console.log('lng: '+obj.lng);
 	}
