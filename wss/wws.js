@@ -11,6 +11,7 @@ function msg(m){
 
 //socket is a defin
 function connect(socket,url){
+	console.log('aaa');
 	socket = new WebSocket(url);
 	if(socket == undefined){
 		err('parameter socket is not defined');
