@@ -48,7 +48,6 @@ class Server extends WebSocketServer{
 		$this->send($this->users[$userid],$username.' is registering...');
 		$this->users[$userid]->roomname = $roomname;
 
-		$this->send($this->users[$userid],"aaa");
 		//Query the coordinates of the user
 		$query = "select latitude,longitude from users where roomid = (select roomid from rooms where roomname = '".$roomname."' limit 1) limit 1";
 		$rs = sql_query($query, $db);
@@ -58,7 +57,7 @@ class Server extends WebSocketServer{
 
 		foreach($this->users as $u){
 			//skip itself
-			//if($u->id == $userid) continue;
+			if($u->id == $userid) continue;
 			$cmd = 'addmarker';
 			$arr = array(
 				"userid"=>$u->id,

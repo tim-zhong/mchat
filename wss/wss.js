@@ -54,9 +54,13 @@ function register(socket,username,roomname){
 function processasobj(s){
 	var obj = JSON.parse(JSON.stringify(s));
 	if(obj.cmd == 'addmarker'){
-		console.log('userid: '+obj.userid);
-		console.log('username: '+obj.name);
-		console.log('lat: '+obj.lat);
-		console.log('lng: '+obj.lng);
+		// console.log('userid: '+obj.userid);
+		// console.log('username: '+obj.name);
+		// console.log('lat: '+obj.lat);
+		// console.log('lng: '+obj.lng);
+		var username = obj.username;
+		var lat	= obj.lat;
+		var lng = obj.lng;
+		addmarker(name,lat,lng);
 	}
 }
