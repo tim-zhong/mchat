@@ -52,9 +52,6 @@ function register(socket,username,roomname){
 }
 
 function processasobj(s){
-	var a = '{"userid":"u56f71cf9269c6","name":"test","lat":"43.665188699999995","lng":"-79.3891484","cmd":"addmarker"}';
-	console.log(a);
-	console.log(s);
 	var obj = JSON.parse(JSON.stringify(s));
 	if(obj.cmd == 'addmarker'){
 		console.log('userid: '+obj.userid);
