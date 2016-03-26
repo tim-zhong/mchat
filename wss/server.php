@@ -60,7 +60,6 @@ class Server extends WebSocketServer{
 			//skip itself
 			//if($u->id == $userid) continue;
 			$cmd = 'addmarker';
-			$result = '{"userid":"'.$u->id.'","name":"'.$username.'","lat":"'.$lat.'","lng":"'.$lng.'","cmd":"'.$cmd.'"}';
 			$arr = array(
 				"userid"=>$u->id,
 				"name"=>$username,
@@ -68,9 +67,8 @@ class Server extends WebSocketServer{
 				"lng"=>$lng,
 				"cmd"=>$cmd
 			);
-			$result1 = self::createobjstr($arr);
+			$result = self::createobjstr($arr);
 			$this->send($u, $result);
-			$this->send($u, $result1);
 		}
 
 	}

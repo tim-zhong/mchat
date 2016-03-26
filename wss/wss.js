@@ -38,6 +38,7 @@ function connect(socket,url,username,roomname){
 	}
 	socket.onmessage = function(e){
 		msg(e.data);
+		processasobj(e.data)
 	}
 }
 
@@ -50,9 +51,12 @@ function register(socket,username,roomname){
 	socket.send(obj);
 }
 
-function processobj(s){
+function processasobj(s){
 	var obj = JSON.parse(s);
 	if(obj.cmd == 'addmarker'){
-		
+		console.log('userid: '+obj.userid);
+		console.log('username: '+obj.username);
+		console.log('lat: '+obj.lat);
+		console.log('lng: '+obj.lng);
 	}
 }
