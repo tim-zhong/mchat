@@ -60,9 +60,9 @@ class Server extends WebSocketServer{
 			//skip itself
 			//if($u->id == $userid) continue;
 			$cmd = 'addmarker';
-			$result = '{"userid":"'.$user->id.'","name":"'.$username.'","lat":"'.$lat.'","lng":"'.$lng.'","cmd":"'.$cmd.'"}';
+			$result = '{"userid":"'.$u->id.'","name":"'.$username.'","lat":"'.$lat.'","lng":"'.$lng.'","cmd":"'.$cmd.'"}';
 			$arr = array(
-				"userid"=>$user->id,
+				"userid"=>$u->id,
 				"name"=>$username,
 				"lat"=>$lat,
 				"lng"=>$lng,
@@ -79,6 +79,7 @@ class Server extends WebSocketServer{
 		foreach($arr as $key=>$value){
 			$result.='"'.$key.'":"'.$value.'",';
 		}
+		rtrim($result, ",")
 		$result .= "}";
 		return $result;
 	}
