@@ -5,7 +5,7 @@ function err(m){
 }
 
 function msg(m){
-	if(debug) consold.log('Message: ' + m);
+	if(debug) console.log('Message: ' + m);
 }
 
 
