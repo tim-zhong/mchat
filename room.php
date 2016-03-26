@@ -1,7 +1,6 @@
 <?php 
 include "connect.php";
 
-
 function findusers(){
 	$roomname = $_GET['room'];
 	
@@ -118,6 +117,9 @@ function findusers(){
 	var socket = null;
 	var url = "ws://ec2-52-37-132-185.us-west-2.compute.amazonaws.com:9897";
 	connect(socket,url);
+	var username = "test";
+	var roomname = <?php echo $_GET['room']; ?>;
+	register(socket,username,roomname);
 	
 
 // ==================================================== //

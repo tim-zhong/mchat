@@ -42,3 +42,12 @@ function connect(socket,url){
 		msg(e.data);
 	}
 }
+
+function register(socket,username,roomname){
+	if(!socket || socket == undefined){
+		err('Fail to Register, No Available Socket');
+		return false;
+	}
+	var obj = JSON.stringify({'type':'register','username':username,'roomname':roomname});
+	socket.send(obj);
+}

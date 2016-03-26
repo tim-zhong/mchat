@@ -1,5 +1,5 @@
 <?php
-
+include_once "../connect.php";
 require "Websockets/websockets.php";
 
 
@@ -15,13 +15,18 @@ class Server extends WebSocketServer{
 	}
 
 	protected function process($user,$message){
-		$pakage = json_decode($message);
-		$name = $pakage->{'name'};
-		$message = $pakage->{'message'};
-		$cmd = $pakage->{'cmd'};
-		$result = '{"userid":"'.$user->id.'","name":"'.$name.'","message":"'.$message.'","cmd":"'.$cmd.'"}';
-		foreach($this->users as $u){
-			$this->send($u, $result);
+		$obj = json_decode($message);
+		$type = $obj{'type'};
+
+		switch($type){
+			case 'register':
+				$username = $obj{'username'};
+				$roomname = $obj{'roomname'};
+				$userid = $user->id;
+				register($userid,$username,$roomname);
+				break;
+			default:
+				$this->send($user, 'failed to register');
 		}
 	}
 
@@ -38,6 +43,14 @@ class Server extends WebSocketServer{
 
 	public function __destruct(){
 		echo "Server destroyed ".PHP_EOL;
+	}
+
+
+
+
+	//Helpers
+	protected function register($userid,$username,$roomname){
+		$this->send($users[$userid],$username' registering...');
 	}
 }
 
