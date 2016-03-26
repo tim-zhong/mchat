@@ -47,8 +47,15 @@ class Server extends WebSocketServer{
 		$this->send($this->users[$userid],$username.' is registering...');
 		$this->users[$userid]->roomname = $roomname;
 
+		$dbid = $_COOKIE['user'];
 		//Query the coordinates of the user
-		//$query = "select latitude,longitude from users where userid = $userid"
+		$query = "select latitude,longitude from users where userid = $dbid";
+		$rs = sql_query($query, $db);
+		$user = sql_fetch_array($rs);
+		$lat = $user['latitude'];
+		$lng = $user['longitude'];
+
+		$this->send($this->users[$userid],$lat."---".$lng);
 	}
 }
 
