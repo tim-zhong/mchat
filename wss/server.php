@@ -5,6 +5,8 @@ require "Websockets/websockets.php";
 
 
 class Server extends WebSocketServer{
+	global $db;
+
 	private $_connecting = "connecting to server...";
 	private $_welcome = 'Hello, welcome to echo server!';
 	protected $users = array();
@@ -46,6 +48,8 @@ class Server extends WebSocketServer{
 		$this->send($this->users[$userid],$username.' is registering...');
 		$this->users[$userid]->roomname = $roomname;
 
+		//Query the coordinates of the user
+		//$query = "select latitude,longitude from users where userid = $userid"
 	}
 }
 
