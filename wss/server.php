@@ -3,9 +3,8 @@ include "connect.php";
 require "Websockets/websockets.php";
 
 
-
+global $db;
 class Server extends WebSocketServer{
-	global $db;
 
 	private $_connecting = "connecting to server...";
 	private $_welcome = 'Hello, welcome to echo server!';
