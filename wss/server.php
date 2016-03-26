@@ -48,9 +48,9 @@ class Server extends WebSocketServer{
 		$this->users[$userid]->roomname = $roomname;
 
 		$dbid = $_COOKIE['user'];
+		$this->send($this->users[$userid],$dbid);
 		//Query the coordinates of the user
 		$query = "select latitude,longitude from users where userid = $dbid";
-		$this->send($this->users[$userid],$query);
 		$rs = sql_query($query, $db);
 		$user = sql_fetch_array($rs);
 		$lat = $user['latitude'];
@@ -62,7 +62,7 @@ class Server extends WebSocketServer{
 }
 
 $addr = 'ec2-52-37-132-185.us-west-2.compute.amazonaws.com';
-$port = '9797';
+$port = '9897';
 
 $server = new Server($addr,$port);
 $server->run();
