@@ -57,9 +57,21 @@ class Server extends WebSocketServer{
 		$lng = $user['longitude'];
 
 		foreach($this->users as $u){
-			$this->send($u, $username." has joined the room with latitude ".$lat." and longitude ".$lng);
+			//skip itself
+			if($u->userid == $userid) continue;
+			$cmd1 = 'geo';
+			$result = '{"userid":"'.$user->id.'","name":"'.$username.'","lat":"'.$lat.'","lng":"'.$lng.'","cmd":"'.$cmd.'"}';
+			$this->send($u, $result);
 		}
 
+	}
+	protected function createobjstr($keys,$values){
+		$result = "{";
+		foreach($keys as $key and $values as $value){
+			$result.='"'.$keys.'":"'.$value.'",';
+		}
+		$result .= "}";
+		return $result;
 	}
 }
 

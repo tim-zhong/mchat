@@ -49,3 +49,10 @@ function register(socket,username,roomname){
 	var obj = JSON.stringify({'type':"register",'username':username,'roomname':roomname});
 	socket.send(obj);
 }
+
+function processobj(s){
+	var obj = JSON.parse(s);
+	if(obj.cmd == 'geo'){
+		
+	}
+}
