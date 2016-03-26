@@ -11,6 +11,7 @@ function msg(m){
 
 //socket is a defin
 function connect(socket,url,username,roomname){
+	socket = new WebSocket(url);
 	if(socket == undefined){
 		err('parameter socket is not defined');
 		return false;
@@ -19,8 +20,6 @@ function connect(socket,url,username,roomname){
 		err('parameter url is invalid');
 		return false;
 	}
-
-	socket = new WebSocket(url);
 	if(!socket || socket == undefined){
 		err('failed to create socket');
 		return false;
@@ -29,9 +28,7 @@ function connect(socket,url,username,roomname){
 
 	socket.onopen = function(){
 		msg('Open successfully');
-		//register(socket,username,roomname);
-		var obj = JSON.stringify({'type':"register",'username':username,'roomname':roomname});
-	socket.send(obj);
+		register(socket,username,roomname);
 	}
 	socket.onerror = function(){
 		msg('Error occurs');
