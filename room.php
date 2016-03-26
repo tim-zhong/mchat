@@ -116,7 +116,7 @@ function findusers(){
 
 	var socket = null;
 	var url = "ws://ec2-52-37-132-185.us-west-2.compute.amazonaws.com:9797";
-	var username = "test";
+	var username = $_COOKIE['user'];
 	var roomname = '<?php echo $_GET['room']; ?>';
 	connect(socket,url,username,roomname);
 	

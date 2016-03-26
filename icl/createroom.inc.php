@@ -19,7 +19,7 @@ function createroom($name,$latitude,$longitude){
 
 	if(sql_query($query,$db)){
 		$userid = sql_insert_id($db);
-		setcookie('user',$userid);
+		setcookie('user',$name);
 		?>
 		<a href="room.php?room=<?php echo $rand;?>"><div class="button button-green">Room Created</div></a>
 		<?php

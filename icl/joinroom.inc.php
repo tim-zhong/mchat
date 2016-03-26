@@ -41,7 +41,7 @@ function joinroom($name,$roomname,$latitude,$longitude){
 
 						if(sql_query($query,$db)){
 
-							setcookie('user',$userid);
+							setcookie('user',$name);
 							?>
 							<a href="<?php echo 'room.php?room='.$roomname;?>"><div class="button button-green">Room Found</div></a>
 							<?php
