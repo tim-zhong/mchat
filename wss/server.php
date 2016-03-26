@@ -16,12 +16,12 @@ class Server extends WebSocketServer{
 
 	protected function process($user,$message){
 		$obj = json_decode($message,true);
-		$cmd = $obj{'type'};
+		$cmd = $obj['type'];
 
 		switch($cmd){
 			case 'register':
-				$username = $obj{'username'};
-				$roomname = $obj{'roomname'};
+				$username = $obj['username'];
+				$roomname = $obj['roomname'];
 				$userid = $user->id;
 				self::register($userid,$username,$roomname);
 				break;
