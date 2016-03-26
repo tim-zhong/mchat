@@ -41,7 +41,7 @@ class Server extends WebSocketServer{
 	}
 }
 
-$addr = 'localhost';
+$addr = 'timzhong.com';
 $port = '9897';
 
 $server = new Server($addr,$port);
