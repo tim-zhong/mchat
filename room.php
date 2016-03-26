@@ -119,7 +119,7 @@ function findusers(){
 	connect(socket,url);
 	var username = "test";
 	var roomname = '<?php echo $_GET['room']; ?>';
-	// register(socket,username,roomname);
+	 register(socket,username,roomname);
 	
 
 // ==================================================== //
