@@ -10,7 +10,7 @@ function msg(m){
 
 
 //socket is a defin
-function connect(socket,url){
+function connect(socket,url,username,roomname){
 	socket = new WebSocket(url);
 	if(socket == undefined){
 		err('parameter socket is not defined');
@@ -30,6 +30,7 @@ function connect(socket,url){
 
 	socket.onopen = function(){
 		msg('Open successfully');
+		register(socket,username,roomname);
 	}
 	socket.onerror = function(){
 		msg('Error occurs');
