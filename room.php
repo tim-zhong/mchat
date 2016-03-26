@@ -116,7 +116,7 @@ function findusers(){
 // ======================= websockets ================= //
 
 	var socket = null;
-	var url = "ws://http://timzhong.com:9898";
+	var url = "ws://http://timzhong.com:9897/wss";
 	connect(socket,url);
 	
 
