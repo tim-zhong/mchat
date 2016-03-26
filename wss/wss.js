@@ -34,7 +34,7 @@ function connect(socket,url,username,roomname){
 		msg('Error occurs');
 	}
 	socket.onclose = function(){
-		msg('Socket Closed');
+		msg('Seockt Closed');
 	}
 	socket.onmessage = function(e){
 		msg(e.data);
