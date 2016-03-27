@@ -75,6 +75,7 @@ function findusers(){
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script src="wss/wss.js"></script>
 	<script>
+	var latandlngs=[];
 	var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         mapTypeId: 'roadmap'
@@ -89,7 +90,9 @@ function findusers(){
     
 
 	function addmarker(name, lat, lng){
-
+			for(var i = 0; i < latlngs.length; i++){
+				if(lat == latlngs[i][0] && lng == latlngs[i][1]) return false;
+			}
 	    	var position = new google.maps.LatLng(lat, lng);
 
 	    	bounds.extend(position);
@@ -111,6 +114,8 @@ function findusers(){
 	                infoWindow.open(map, marker);
 	            }
 	        })(marker, i));
+
+	        latlngs.push([lat,lng]);
 	}
 
 // ======================= websockets ================= //
