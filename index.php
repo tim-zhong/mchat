@@ -182,6 +182,7 @@
 		width:100%;
 		bottom:10px;
 		color:#ffffff;
+		font-weight: 300;
 	}
 	#title{
 		width:90%;
