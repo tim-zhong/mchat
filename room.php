@@ -98,6 +98,7 @@ function findusers(){
 	            position: position,
 	            map: map,
 	            title: name
+	            animation: google.maps.Animation.DROP
 	        });
 
 	        map.fitBounds(bounds);
