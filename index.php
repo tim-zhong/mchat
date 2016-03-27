@@ -9,8 +9,14 @@
 
 <body>
 	<style>
+	html{
+		background:url(images/ping.png) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
 	body{
-		background:#e8edf3;
 		margin: 0;
 		overflow: hidden;
 	}
@@ -20,6 +26,10 @@
 	a{
 		text-decoration: none;
 	}
+	.left{
+		float:left;
+		width:60%;
+	}
 	#main{
 		width:100%;
 		height:100%;
@@ -27,7 +37,7 @@
 	}
 	#form-container-join,#form-container-create a{
 		text-decoration: none;
-		color:#22264b;
+		color:#ffffff;
 	}
 	#form-container-join,#form-container-create{
 		width:70%;
@@ -51,9 +61,9 @@
 		padding:18px 20px;
 		width:80%;
 		font-size:24px;
-		color:#22264b;
+		color:#ffffff;
 		background:none;
-		border:3px solid #22264b;
+		border:3px solid #ffffff;
 		-webkit-border-radius:30px;
 		-ms-border-radius:30px;
 		-o-border-radius:30px;
@@ -61,6 +71,14 @@
 		font-family: 100;
 		text-align: center;
 		outline: 0;
+		-webkit-transition:background 250ms;
+		-moz-transition:background 250ms;
+		-o-transition:background 250ms;
+		transition:background 250ms;
+
+	}
+	#form-container-join input:focus,#form-container-create input:focus{
+		background: rgba(0,0,0,0.4);
 	}
 	.button{
 		cursor: pointer;
@@ -125,7 +143,7 @@
 		-moz-transition:bottom 250ms;
 		-o-transition:bottom 250ms;
 		transition:bottom 250ms;
-		color:#22264b;
+		color:#ffffff;
 		cursor:pointer;
 		position: absolute;
 		right: 0;
@@ -170,6 +188,7 @@
 		position: absolute;
 		width:100%;
 		bottom:10px;
+		color:#ffffff;
 	}
 	#title{
 		width:90%;
@@ -179,6 +198,9 @@
 	}
 	</style>
 	<div id="main">
+		<div class="left">
+		</div>
+		<div class="clear"></div>
 		<div id="form-container-join">
 			<div id="input-group-create">
 				<input id="name" name="name" placeholder="NAME"/>
