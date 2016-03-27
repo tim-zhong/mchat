@@ -89,6 +89,7 @@ function findusers(){
     var infoWindow = new google.maps.InfoWindow(), marker, i;
     
 
+    var pc = document.getElementById('people-number');
 	function addmarker(name, lat, lng){
 			for(var i = 0; i < latlngs.length; i++){
 				if(lat == latlngs[i][0] && lng == latlngs[i][1]) return false;
@@ -116,6 +117,7 @@ function findusers(){
 	        })(marker, i));
 
 	        latlngs.push([lat,lng]);
+	        pc.innerHTML = latlngs.length;
 	}
 
 // ======================= websockets ================= //
