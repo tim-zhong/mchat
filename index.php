@@ -179,7 +179,6 @@
 	}
 	</style>
 	<div id="main">
-		<img id="title" src="http://fontmeme.com/embed.php?text=WHERE%22S%20MY%20BRO&name=BoogieNightsShadowNF.ttf&size=100&style_color=15155E" alt="Retro Fonts">
 		<div id="form-container-join">
 			<div id="input-group-create">
 				<input id="name" name="name" placeholder="NAME"/>
