@@ -35,7 +35,7 @@
 	#form-container-join,#form-container-create{
 		width:70%;
 		margin:0 auto;
-		top:70%;
+		top:50%;
 		position: relative;
 		-webkit-transform:translateY(-70%);
 		-moz-transform:translateY(-70%);
