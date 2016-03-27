@@ -75,7 +75,7 @@ function findusers(){
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script src="wss/wss.js"></script>
 	<script>
-	var latandlngs=[];
+	var latlngs=[];
 	var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         mapTypeId: 'roadmap'
