@@ -52,7 +52,7 @@ function register(socket,username,roomname){
 }
 
 function processasobj(s){
-	var obj = JSON.parse(JSON.stringify(s));
+	var obj = JSON.parse(s);
 	console.log(obj.cmd);
 	if(obj.cmd == 'addmarker'){
 		console.log('userid: '+obj.userid);
