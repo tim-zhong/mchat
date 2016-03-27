@@ -3,25 +3,13 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>distance +</title>
+	<title>MAP CHAT</title>
 	<meta name="description" content="The HTML5">
 </head>
 
 <body>
 	<style>
-	html{
-		background:url(images/ping.png) no-repeat center center fixed;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-	}
 	body{
-		background:url(images/ping.png) no-repeat center center fixed;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
 		margin: 0;
 		overflow: hidden;
 	}
@@ -201,7 +189,27 @@
 		position: absolute;
 		top:20%;
 	}
+	#bg {
+	  position: fixed; 
+	  top: -50%; 
+	  left: -50%; 
+	  width: 200%; 
+	  height: 200%;
+	}
+	#bg img {
+	  position: absolute; 
+	  top: 0; 
+	  left: 0; 
+	  right: 0; 
+	  bottom: 0; 
+	  margin: auto; 
+	  min-width: 50%;
+	  min-height: 50%;
+	}
 	</style>
+	<div id="bg">
+		<img src="images/ping.png"/>
+	</div>
 	<div id="main">
 		<div class="left">
 		</div>
