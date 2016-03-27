@@ -7,7 +7,7 @@ global $db;
 class Server extends WebSocketServer{
 
 	private $_connecting = "connecting to server...";
-	private $_welcome = 'Hello, welcome to echo server!';
+	private $_welcome = 'Hello, welcome to echo server!!';
 	protected $users = array();
 
 	protected function connected($user){
