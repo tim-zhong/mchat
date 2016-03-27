@@ -79,7 +79,7 @@ class Server extends WebSocketServer{
 		}
 		$result=rtrim($result, ",");
 		$result .= "}";
-		return json_encode($result);
+		return $result;
 	}
 }
 
