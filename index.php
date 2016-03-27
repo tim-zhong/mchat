@@ -17,6 +17,11 @@
 		background-size: cover;
 	}
 	body{
+		background:url(images/ping.png) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 		margin: 0;
 		overflow: hidden;
 	}
