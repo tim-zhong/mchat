@@ -67,7 +67,7 @@ function findusers(){
     	<div id="map_canvas" class="mapping"></div>
 	</div>
 	<table id="room-info">
-		<tr><td>Room Code</td><td>: </td><td><?php echo $_GET['room']; ?></td></tr>
+		<tr><td>Room</td><td>: </td><td><?php echo $_GET['room']; ?></td></tr>
 		<tr><td>People</td><td>: </td><td id="people-number">: </td></tr>
 	</table>
 
