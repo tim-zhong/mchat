@@ -97,7 +97,7 @@ function findusers(){
 	    	marker = new google.maps.Marker({
 	            position: position,
 	            map: map,
-	            title: name
+	            title: name,
 	            animation: google.maps.Animation.DROP
 	        });
 
