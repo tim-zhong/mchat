@@ -58,7 +58,7 @@ class Server extends WebSocketServer{
 
 		foreach($this->users as $u){
 			//skip itself
-			if($u->id == $userid) continue;
+			if($u->id == $userid || $u->roomname != $roomname) continue;
 			$cmd = 'addmarker';
 			$arr = array(
 				"userid"=>$u->id,
