@@ -147,6 +147,11 @@ function findusers(){
 		addmarker(markers[i][0],markers[i][1],markers[i][2]);
 	}
 	//addmarker('Palace of Westminster, London', 51.499633,-0.124755);
+
+
+	window.onunload = function(){
+		alert('window closed');
+	}
 	</script>
 </body>
 </html>
