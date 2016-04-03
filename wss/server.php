@@ -35,8 +35,12 @@ class Server extends WebSocketServer{
 		global $db;
 		unset($this->users[$user->id]);
 		//Delete User From database;
-		$query = "delete from users where username = '".$user->username."' and roomid = (select roomid from rooms where roomname = '".$user->roomname."' limit 1) limit 1";
+		$query = "DELETE from users where username = '".$user->username."' and roomid = (SELECT roomid from rooms where roomname = '".$user->roomname."' limit 1) limit 1";
 		sql_query($query, $db);
+
+		//Decrement User count in that room;
+		$query = "UPDATE rooms SET usercount = usercount - 1 WHERE roomname='".$user->roomname."'";
+		sql_query($query, $db);		
 	}
 
 	public function __destruct(){
