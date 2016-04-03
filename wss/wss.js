@@ -65,7 +65,6 @@ function processasobj(s){
 		addmarker(username,lat,lng);
 	}else if(obj.cmd == "removemarker"){
 		var username = obj.username;
-		consolg.log('deleting user '+username);
 		//remove marker from view;
 		markersarray[username].setMap(null);
 		
