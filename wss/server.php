@@ -47,10 +47,11 @@ class Server extends WebSocketServer{
 		sql_query($query, $db);
 
 		foreach($this->users as $u){
-			if($u->id == $user->id || $u->roomname != $user->roomname) continue;
+			if($u->id == $user->id || $u->roomname != $user->roomname) continue; //Skip itself
 			$cmd = "removemarker";
 			$arr = array(
-				
+				"cmd"=>$cmd;
+				"username"=>$user->username;
 			);
 		}
 	}

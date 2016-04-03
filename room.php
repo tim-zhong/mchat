@@ -68,7 +68,7 @@ function findusers(){
 	</div>
 	<table id="room-info">
 		<tr><td>Room</td><td>: </td><td><?php echo $_GET['room']; ?></td></tr>
-		<tr><td>People</td><td>: </td><td id="people-number">: </td></tr>
+		<tr><td>People</td><td>: </td><td id="user-count">: </td></tr>
 	</table>
 
 	<script src="jquery.js"></script>
@@ -91,7 +91,7 @@ function findusers(){
     var infoWindow = new google.maps.InfoWindow(), marker, i;
     
 
-    var pc = document.getElementById('people-number');
+    var pc = document.getElementById('user-count');
 	function addmarker(name, lat, lng){
 			for(var i = 0; i < latlngs.length; i++){
 				if(lat == latlngs[i][0] && lng == latlngs[i][1]) return false;
@@ -145,7 +145,7 @@ function findusers(){
 // ==================================================== //
 
 	var markers = <?php echo findusers();?>;
-	document.getElementById('people-number').innerHTML = markers.length;
+	document.getElementById('user-count').innerHTML = markers.length;
 	for( i = 0; i < markers.length; i++ ) {
 		addmarker(markers[i][0],markers[i][1],markers[i][2]);
 	}
@@ -154,7 +154,7 @@ function findusers(){
 
 	
 	window.addEventListener("beforeunload", function (e) {
-		if(markers.length == 1){
+		if(markersarray.length == 1){
   			var confirmationMessage = "The room will be disgarded after the last user leave.";
 
   			e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+

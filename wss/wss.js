@@ -64,4 +64,15 @@ function processasobj(s){
 		var lng = obj.lng;
 		addmarker(username,lat,lng);
 	}
+	else if(obj.cmd == "removemarker"){
+		var username = obj.username;
+		//remove marker from view;
+		markersarray[username].setMap(null);
+		
+		//remove marker from array
+		delete markersarray[username];
+
+		//Update user count
+		document.getElementById('user-count').innerHTMl = markersarray.length;
+	}
 }
