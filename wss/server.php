@@ -50,8 +50,8 @@ class Server extends WebSocketServer{
 			if($u->id == $user->id || $u->roomname != $user->roomname) continue; //Skip itself
 			$cmd = "removemarker";
 			$arr = array(
-				"cmd"=>$cmd;
-				"username"=>$user->username;
+				"cmd"=>$cmd,
+				"username"=>$user->username
 			);
 		}
 	}
