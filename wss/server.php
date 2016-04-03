@@ -63,8 +63,8 @@ class Server extends WebSocketServer{
 		$rs = sql_query($query, $db);
 
 		////Check for User existence
-		if($rs){
-		$user = sql_fetch_array($rs);
+		if(sql_affected_rows($db)){
+			$user = sql_fetch_array($rs);
 			$lat = $user['latitude'];
 			$lng = $user['longitude'];
 
