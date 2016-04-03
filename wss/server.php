@@ -61,25 +61,28 @@ class Server extends WebSocketServer{
 		$query = "select latitude,longitude from users where roomid = (select roomid from rooms where roomname = '".$roomname."') and username = '".$username."' limit 1";
 		$this->send($this->users[$userid],$query);
 		$rs = sql_query($query, $db);
+
+		////Check for User existence
+		if($rs){
 		$user = sql_fetch_array($rs);
-		$lat = $user['latitude'];
-		$lng = $user['longitude'];
+			$lat = $user['latitude'];
+			$lng = $user['longitude'];
 
-		foreach($this->users as $u){
-			//skip itself
-			if($u->id == $userid || $u->roomname != $roomname) continue;
-			$cmd = 'addmarker';
-			$arr = array(
-				"userid"=>$u->id,
-				"username"=>$username,
-				"lat"=>$lat,
-				"lng"=>$lng,
-				"cmd"=>$cmd
-			);
-			$result = self::createobjstr($arr);
-			$this->send($u, $result);
+			foreach($this->users as $u){
+				//skip itself
+				if($u->id == $userid || $u->roomname != $roomname) continue;
+				$cmd = 'addmarker';
+				$arr = array(
+					"userid"=>$u->id,
+					"username"=>$username,
+					"lat"=>$lat,
+					"lng"=>$lng,
+					"cmd"=>$cmd
+				);
+				$result = self::createobjstr($arr);
+				$this->send($u, $result);
+			}
 		}
-
 	}
 	protected function createobjstr($arr){
 		$result = "{";
