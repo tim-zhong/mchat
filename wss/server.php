@@ -32,7 +32,11 @@ class Server extends WebSocketServer{
 	}
 
 	protected function closed($user){
+		global $db;
 		unset($this->users[$user->id]);
+		//Delete User From database;
+		$query = "delete from users where username = '".$user->username."' and roomname = '".$user->roomname."'";
+		sql_query($query, $db);
 	}
 
 	public function __destruct(){
@@ -47,6 +51,7 @@ class Server extends WebSocketServer{
 		global $db;
 		$this->send($this->users[$userid],$username.' is registering...');
 		$this->users[$userid]->roomname = $roomname;
+		$this->users[$userid]->username = $username;
 
 		//Query the coordinates of the user
 		$query = "select latitude,longitude from users where roomid = (select roomid from rooms where roomname = '".$roomname."') and username = '".$username."' limit 1";
