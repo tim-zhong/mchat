@@ -151,11 +151,13 @@ function findusers(){
 
 	
 	window.addEventListener("beforeunload", function (e) {
-  var confirmationMessage = "Your record will be disgarded";
+		if(markers.length == 1){
+  			var confirmationMessage = "The room will be disgarded after the last user leave.";
 
-  e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
-  return confirmationMessage;              // Gecko, WebKit, Chrome <34
-});
+  			e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
+  			return confirmationMessage;              // Gecko, WebKit, Chrome <34
+  		}
+	});
 	</script>
 </body>
 </html>
