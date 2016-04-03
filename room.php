@@ -81,7 +81,7 @@ function findusers(){
         mapTypeId: 'roadmap'
     };
 
-    var markersarray = [];
+    var markersarray{};
                     
     // Display a map on the page
     var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
