@@ -1,4 +1,6 @@
 <?php 
+if(!isset($_COOKIE['user'])){header('Location: index.php');}
+else{$c_username = $_COOKIE['user']; setcookie("user", "", time() - 3600);}
 include "connect.php";
 
 function findusers(){
@@ -129,7 +131,7 @@ function findusers(){
 
 	var socket = null;
 	var url = "ws://ec2-52-37-132-185.us-west-2.compute.amazonaws.com:9897";
-	var username = getCookie('user');
+	var username = <?echo $c_username;?>;
 	var roomname = '<?php echo $_GET['room']; ?>';
 	connect(socket,url,username,roomname);
 	
