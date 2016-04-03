@@ -53,18 +53,17 @@ function register(socket,username,roomname){
 
 function processasobj(s){
 	var obj = JSON.parse(s);
-	console.log(obj.cmd);
+	console.log(obj.cmd=='removemarker');
 	if(obj.cmd == 'addmarker'){
 		console.log('userid: '+obj.userid);
-		console.log('username: '+obj.name);
+		console.log('username: '+obj.username);
 		console.log('lat: '+obj.lat);
 		console.log('lng: '+obj.lng);
 		var username = obj.username;
 		var lat	= obj.lat;
 		var lng = obj.lng;
 		addmarker(username,lat,lng);
-	}
-	else if(obj.cmd == "removemarker"){
+	}else if(obj.cmd == "removemarker"){
 		var username = obj.username;
 		consolg.log('deleting user '+username);
 		//remove marker from view;
