@@ -53,6 +53,8 @@ class Server extends WebSocketServer{
 				"cmd"=>$cmd,
 				"username"=>$user->username
 			);
+			$result = self::createobjstr($arr); // Pakage Data
+			$this->send($u, $result);
 		}
 	}
 
