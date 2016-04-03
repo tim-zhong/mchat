@@ -40,7 +40,11 @@ class Server extends WebSocketServer{
 
 		//Decrement User count in that room;
 		$query = "UPDATE rooms SET usercount = usercount - 1 WHERE roomname='".$user->roomname."'";
-		sql_query($query, $db);		
+		sql_query($query, $db);
+
+		//Remove empty rooms
+		$query = "DELETE from rooms where usercount = 0";
+		sql_query($query, $db);
 	}
 
 	public function __destruct(){
