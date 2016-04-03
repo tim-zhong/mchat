@@ -121,8 +121,8 @@ function findusers(){
 	            }
 	        })(marker, i));
 
-
 	        markersarray[name] = marker;
+	        pc.innerHTML =  Object.size(markersarray);
 	}
 
 // ======================= websockets ================= //
