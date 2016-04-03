@@ -45,6 +45,14 @@ class Server extends WebSocketServer{
 		//Remove empty rooms
 		$query = "DELETE from rooms where usercount = 0";
 		sql_query($query, $db);
+
+		foreach($this->users as $u){
+			if($u->id == $user->id || $u->roomname != $user->roomname) continue;
+			$cmd = "removemarker";
+			$arr = array(
+				
+			);
+		}
 	}
 
 	public function __destruct(){

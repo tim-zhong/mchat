@@ -80,6 +80,8 @@ function findusers(){
     var mapOptions = {
         mapTypeId: 'roadmap'
     };
+
+    var markersarray = [];
                     
     // Display a map on the page
     var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
@@ -118,6 +120,7 @@ function findusers(){
 
 	        latlngs.push([lat,lng]);
 	        pc.innerHTML = latlngs.length;
+	        markersarray[name] = marker;
 	}
 
 // ======================= websockets ================= //
