@@ -82,6 +82,13 @@ function findusers(){
     };
 
     var markersarray = {};
+    Object.size = function(obj) {
+	    var size = 0, key;
+	    for (key in obj) {
+	        if (obj.hasOwnProperty(key)) size++;
+	    }
+	    return size;
+	};
                     
     // Display a map on the page
     var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
@@ -145,7 +152,7 @@ function findusers(){
 // ==================================================== //
 
 	var markers = <?php echo findusers();?>;
-	document.getElementById('user-count').innerHTML = markers.length;
+	document.getElementById('user-count').innerHTML = Object.size(markersarray);
 	for( i = 0; i < markers.length; i++ ) {
 		addmarker(markers[i][0],markers[i][1],markers[i][2]);
 	}
@@ -154,7 +161,7 @@ function findusers(){
 
 	
 	window.addEventListener("beforeunload", function (e) {
-		if(markersarray.length == 1){
+		if(Object.size(markersarray) == 1){
   			var confirmationMessage = "The room will be disgarded after the last user leave.";
 
   			e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+

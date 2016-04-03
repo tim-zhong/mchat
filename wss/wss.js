@@ -72,6 +72,6 @@ function processasobj(s){
 		delete markersarray[username];
 
 		//Update user count
-		document.getElementById('user-count').innerHTMl = markersarray.length;
+		document.getElementById('user-count').innerHTML = Object.size(markersarray);
 	}
 }
