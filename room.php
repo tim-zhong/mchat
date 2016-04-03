@@ -149,9 +149,13 @@ function findusers(){
 	//addmarker('Palace of Westminster, London', 51.499633,-0.124755);
 
 
-	window.onunload = function(){
-		alert('window closed');
-	}
+	
+	window.addEventListener("beforeunload", function (e) {
+  var confirmationMessage = "Your record will be disgarded";
+
+  e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
+  return confirmationMessage;              // Gecko, WebKit, Chrome <34
+});
 	</script>
 </body>
 </html>

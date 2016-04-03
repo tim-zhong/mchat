@@ -62,7 +62,7 @@ class Server extends WebSocketServer{
 			$cmd = 'addmarker';
 			$arr = array(
 				"userid"=>$u->id,
-				"name"=>$username,
+				"username"=>$username,
 				"lat"=>$lat,
 				"lng"=>$lng,
 				"cmd"=>$cmd
