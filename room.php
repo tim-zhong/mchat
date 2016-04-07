@@ -123,6 +123,7 @@ function findusers(){
 	            position: position,
 	            map: map,
 	            title: name,
+	            draggble: true,
 	            animation: google.maps.Animation.DROP
 	        });
 
