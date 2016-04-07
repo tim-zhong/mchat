@@ -78,7 +78,7 @@ function processasobj(s){
 	}
 }
 
-function sendmessage(socket){
+function sendmessage(){
 	var message = document.getElementById('mmessage');
 	if(message.value == "" ){
 		message.style.border="1px solid #660000";
