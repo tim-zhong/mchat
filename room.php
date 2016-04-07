@@ -74,6 +74,7 @@ function findusers(){
 			height:200px;
 			width:100%;
 		}
+		.chat_window{width:200px;}
 	</style>
 
 	<div id="map_wrapper">
