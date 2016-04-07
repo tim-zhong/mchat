@@ -40,6 +40,7 @@ function connect(socket,url,username,roomname){
 		msg(e.data);
 		processasobj(e.data)
 	}
+	return socket;
 }
 
 function register(socket,username,roomname){
