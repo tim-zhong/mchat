@@ -76,6 +76,7 @@ function findusers(){
 			width:100%;
 		}
 		.chat_window{width:200px;}
+
 		a[href^="http://maps.google.com/maps"]{display:none !important}
 		a[href^="https://maps.google.com/maps"]{display:none !important}
 
@@ -94,7 +95,7 @@ function findusers(){
 		<tr><td>Room</td><td>: </td><td><?php echo $_GET['room']; ?></td></tr>
 		<tr><td>People</td><td>: </td><td id="user-count">: </td></tr>
 	</table>
-	<form id="mform" onsubmit="return false;">
+	<form id="mform" onsubmit="sendmessage();return false;">
 		<input id="mmessage">
 		<input type="submit">
 	</form>

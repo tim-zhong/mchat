@@ -26,6 +26,21 @@ class Server extends WebSocketServer{
 				$userid = $user->id;
 				self::register($userid,$username,$roomname);
 				break;
+			case 'message':
+				$username = $obj->{'username'};
+				$roomname = $obj->{'roomname'};
+				$message = $obj->{'message'};
+				foreach($this->users as $u){
+					if($u ->roomname != $roomname) continue;
+					$cmd = "message";
+					$arr = array(
+						'cmd'=>$cmd,
+						'from'=>$username,
+						'message'=>$message
+					);
+					$result = self::createobjstr($arr); // Pakage Data
+					$this->send($u, $result);
+				}
 			default:
 				$this->send($user, 'failed to register');
 		}
