@@ -66,7 +66,8 @@ function findusers(){
 		#mmessage{
 			position:fixed;
 			bottom:10px;
-			width:100%;
+			left:10px;
+			width:80%;
 			font-size:30px;
 		}
 		.cw_history{
@@ -84,8 +85,9 @@ function findusers(){
 		<tr><td>Room</td><td>: </td><td><?php echo $_GET['room']; ?></td></tr>
 		<tr><td>People</td><td>: </td><td id="user-count">: </td></tr>
 	</table>
-	<form id="mform">
+	<form id="mform" onsubmit="return false;">
 		<input id="mmessage">
+		<input type="submit">
 	</form>
 
 	<script src="jquery.js"></script>
