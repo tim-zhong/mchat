@@ -71,7 +71,7 @@ function findusers(){
 			font-size:30px;
 		}
 		.cw_history{
-			overflow:hidden;
+			overflow:scroll;
 			height:200px;
 			width:100%;
 		}

@@ -41,6 +41,7 @@ class Server extends WebSocketServer{
 					$result = self::createobjstr($arr); // Pakage Data
 					$this->send($u, $result);
 				}
+				break;
 			default:
 				$this->send($user, 'failed to register');
 		}

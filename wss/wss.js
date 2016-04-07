@@ -76,6 +76,10 @@ function processasobj(s){
 		document.getElementById('user-count').innerHTML = Object.size(markersarray);
 	}else if(obj.cmd == "message"){
 		console.log('message: '+obj.message+' from:'+obj.from);
+		var content = document.createElement("SPAN");                       // Create a <span> element
+		var t = document.createTextNode(obj.message); 
+		var w = document.getElementById('cw_history_'+obj.from);
+		w.appendChild(content);
 	}
 }
 
