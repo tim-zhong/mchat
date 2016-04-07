@@ -63,6 +63,17 @@ function findusers(){
 			color:#ffffff;
 			letter-spacing: 1px;
 		}
+		#mmessage{
+			position:fixed;
+			bottom:10px;
+			width:100%;
+			font-size:30px;
+		}
+		.cw_history{
+			overflow:hidden;
+			height:200px;
+			width:100%;
+		}
 	</style>
 
 	<div id="map_wrapper">
@@ -72,6 +83,9 @@ function findusers(){
 		<tr><td>Room</td><td>: </td><td><?php echo $_GET['room']; ?></td></tr>
 		<tr><td>People</td><td>: </td><td id="user-count">: </td></tr>
 	</table>
+	<form id="mform">
+		<input id="mmessage">
+	</form>
 
 	<script src="jquery.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -114,8 +128,8 @@ function findusers(){
 
 	        map.fitBounds(bounds);
 
-	        var label = '<div class="chat_window">' +
-	        '<h3>'+name+'</h3>'+'</div>'
+	        var label = '<div class="chat_window" id="cw_'+name+'">' +
+	        '<h3>'+name+'</h3>'+'<div class="cw_history" id="cw_history_'+name+'"></div></div>'
 	        google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	            return function() {
 	                infoWindow.setContent(label);
