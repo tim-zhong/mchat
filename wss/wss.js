@@ -8,7 +8,20 @@ function msg(m){
 	if(debug) console.log('Message: ' + m);
 }
 
-
+function sendmessage(){
+	var message = document.getElementById('mmessage');
+	if(message.value == "" ){
+		message.style.border="1px solid #660000";
+		return false;
+	}else{
+		if(!socket || socket == undefined){
+		err('Fail to Register, No Available Socket');
+		return false;
+		}
+		var obj = JSON.stringify({'type':"message",'username':username,'roomname':roomname,'message':message.value});
+		socket.send(obj);
+	}
+}
 //socket is a defin
 function connect(socket,url,username,roomname){
 	socket = new WebSocket(url);
@@ -75,20 +88,5 @@ function processasobj(s){
 		document.getElementById('user-count').innerHTML = Object.size(markersarray);
 	}else if(obj.cmd == "message"){
 		console.log('message: '+obj.message+' from:'+obj.from);
-	}
-}
-
-function sendmessage(){
-	var message = document.getElementById('mmessage');
-	if(message.value == "" ){
-		message.style.border="1px solid #660000";
-		return false;
-	}else{
-		if(!socket || socket == undefined){
-		err('Fail to Register, No Available Socket');
-		return false;
-		}
-		var obj = JSON.stringify({'type':"message",'username':username,'roomname':roomname,'message':message.value});
-		socket.send(obj);
 	}
 }
