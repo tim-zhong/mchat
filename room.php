@@ -114,7 +114,7 @@ function findusers(){
 
 	        map.fitBounds(bounds);
 
-	        var label = '<div class="info_content">' +
+	        var label = '<div class="chat_window">' +
 	        '<h3>'+name+'</h3>'+'</div>'
 	        google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	            return function() {
