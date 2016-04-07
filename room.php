@@ -76,6 +76,15 @@ function findusers(){
 			width:100%;
 		}
 		.chat_window{width:200px;}
+		a[href^="http://maps.google.com/maps"]{display:none !important}
+		a[href^="https://maps.google.com/maps"]{display:none !important}
+
+		.gmnoprint a, .gmnoprint span, .gm-style-cc {
+		    display:none;
+		}
+		.gmnoprint div {
+		    background:none !important;
+		}
 	</style>
 
 	<div id="map_wrapper">
