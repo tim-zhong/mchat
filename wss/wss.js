@@ -78,12 +78,16 @@ function processasobj(s){
 	}
 }
 
-function sendmessage(){
+function sendmessage(socket){
 	var message = document.getElementById('mmessage');
 	if(message.value == "" ){
 		message.style.border="1px solid #660000";
 		return false;
 	}else{
+		if(!socket || socket == undefined){
+			err('Fail to Register, No Available Socket');
+			return false;
+		}
 		var obj = JSON.stringify({'type':"message",'username':username,'roomname':roomname,'message':message.value});
 		socket.send(obj);
 	}
