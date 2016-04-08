@@ -156,8 +156,8 @@ function findusers(){
 // ======================= websockets ================= //
 
 	var socket = null;
-	//var url = "ws://ec2-52-37-132-185.us-west-2.compute.amazonaws.com:9897";
-	var url = "ws://localhost:9897";
+	var url = "ws://ec2-52-37-132-185.us-west-2.compute.amazonaws.com:9897";
+	//var url = "ws://localhost:9897";
 	var username = '<?php echo $c_username;?>';
 	var roomname = '<?php echo $_GET['room']; ?>';
 	socket = connect(socket,url,username,roomname);
