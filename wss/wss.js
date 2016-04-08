@@ -48,7 +48,7 @@ function register(socket,username,roomname){
 		err('Fail to Register, No Available Socket');
 		return false;
 	}
-	var obj = JSON.stringify({'type':"register",'username':username,'roomname':roomname});
+	var obj = JSON.stringify({'type':"register",'username':username,'roomname':roomname.toLowerCase()});
 	socket.send(obj);
 }
 
