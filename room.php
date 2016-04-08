@@ -73,6 +73,7 @@ function findusers(){
 		.cw_history{
 
 		}
+		#msubmit{display:none;}
 		.chat_window{width:200px;}
 
 		a[href^="http://maps.google.com/maps"]{display:none !important}
@@ -95,7 +96,7 @@ function findusers(){
 	</table>
 	<form id="mform" onsubmit="sendmessage();return false;">
 		<input id="mmessage">
-		<input type="submit">
+		<input id="msubmit" type="submit">
 	</form>
 
 	<script src="jquery.js"></script>
