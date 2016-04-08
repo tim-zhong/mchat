@@ -79,20 +79,18 @@ function processasobj(s){
 		if(w){
 			w.innerHTML = obj.message;
 		} else{
-			createinfowindow(obj.from, obj.message);
+			createinfowindow(obj.from, obj.message)
 		}
 	}
 }
 
 function createinfowindow(name,message){
 	var marker = markersarray[name];
-	var label = '<div class="chat_window" id="cw_'+name+'">'+'<h3>'+name+'</h3>'+'<div class="cw_history" id="cw_history_'+name+'">'+message+'</div></div>';
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-            infoWindow.setContent(label);
-            infoWindow.open(map, marker);
-        }
-    })(marker, i));
+	var infow = new google.maps.InfoWindow({
+		content: '<div class="chat_window" id="cw_'+name+'">' +
+	        '<h3>'+name+'</h3>'+'<div class="cw_history" id="cw_history_'+name+'">'+message+'</div></div>'
+	});
+	infow.open(map,marker);
 }
 
 function sendmessage(){
