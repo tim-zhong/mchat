@@ -94,6 +94,7 @@ function findusers(){
 		<tr><td>Room</td><td>: </td><td><?php echo $_GET['room']; ?></td></tr>
 		<tr><td>People</td><td>: </td><td id="user-count">: </td></tr>
 	</table>
+	
 	<form id="mform" onsubmit="sendmessage();return false;">
 		<input id="mmessage">
 		<input id="msubmit" type="submit">
