@@ -100,6 +100,7 @@ class Server extends WebSocketServer{
 			$lng = $user['longitude'];
 
 			foreach($this->users as $u){
+				$this->send($u, "Adding");
 				//skip itself
 				if($u->id == $userid || $u->roomname != $roomname) continue;
 				$cmd = 'addmarker';
