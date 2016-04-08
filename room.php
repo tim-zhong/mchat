@@ -71,9 +71,7 @@ function findusers(){
 			font-size:30px;
 		}
 		.cw_history{
-			overflow:scroll;
-			height:200px;
-			width:100%;
+
 		}
 		.chat_window{width:200px;}
 
@@ -143,7 +141,7 @@ function findusers(){
 	        map.fitBounds(bounds);
 
 	        var label = '<div class="chat_window" id="cw_'+name+'">' +
-	        '<h3>'+name+'</h3>'+'<div class="cw_history" id="cw_history_'+name+'"></div></div>'
+	        '<h3>'+name+'</h3>'+'<div class="cw_history" id="cw_history_'+name+'"></div></div>';
 	        google.maps.event.addListener(marker, 'click', (function(marker, i) {
 	            return function() {
 	                infoWindow.setContent(label);
@@ -158,7 +156,8 @@ function findusers(){
 // ======================= websockets ================= //
 
 	var socket = null;
-	var url = "ws://ec2-52-37-132-185.us-west-2.compute.amazonaws.com:9897";
+	//var url = "ws://ec2-52-37-132-185.us-west-2.compute.amazonaws.com:9897";
+	var url = "ws://localhost:9897";
 	var username = '<?php echo $c_username;?>';
 	var roomname = '<?php echo $_GET['room']; ?>';
 	socket = connect(socket,url,username,roomname);

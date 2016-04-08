@@ -54,7 +54,6 @@ function register(socket,username,roomname){
 
 function processasobj(s){
 	var obj = JSON.parse(s);
-	console.log(obj.cmd=='removemarker');
 	if(obj.cmd == 'addmarker'){
 		console.log('userid: '+obj.userid);
 		console.log('username: '+obj.username);
@@ -75,12 +74,25 @@ function processasobj(s){
 		//Update user count
 		document.getElementById('user-count').innerHTML = Object.size(markersarray);
 	}else if(obj.cmd == "message"){
-		console.log('message: '+obj.message+' from:'+obj.from);
-		var content = document.createElement("SPAN");                       // Create a <span> element
-		var t = document.createTextNode(obj.message); 
+		console.log(document.getElementById('cw_history_'+obj.from));
 		var w = document.getElementById('cw_history_'+obj.from);
-		w.appendChild(content);
+		if(w){
+			w.innerHTML = obj.message;
+		} else{
+			createinfowindow(obj.from, obj.message);
+		}
 	}
+}
+
+function createinfowindow(name,message){
+	var marker = markersarray[name];
+	var label = '<div class="chat_window" id="cw_'+name+'">'+'<h3>'+name+'</h3>'+'<div class="cw_history" id="cw_history_'+name+'">'+message+'</div></div>';
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            infoWindow.setContent(label);
+            infoWindow.open(map, marker);
+        }
+    })(marker, i));
 }
 
 function sendmessage(){

@@ -126,7 +126,8 @@ class Server extends WebSocketServer{
 	}
 }
 
-$addr = 'ec2-52-37-132-185.us-west-2.compute.amazonaws.com';
+//$addr = 'ec2-52-37-132-185.us-west-2.compute.amazonaws.com';
+$addr = "localhost";
 $port = '9897';
 
 $server = new Server($addr,$port);
