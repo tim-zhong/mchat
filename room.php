@@ -32,6 +32,9 @@ function findusers(){
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
 
 	<title>MapChat Room</title>
 	<meta name="description" content="The HTML5">
@@ -73,6 +76,7 @@ function findusers(){
 		.cw_history{
 
 		}
+		#mform{position: absolute;}
 		#msubmit{display:none;}
 		.chat_window{width:200px;}
 
@@ -94,7 +98,7 @@ function findusers(){
 		<tr><td>Room</td><td>: </td><td><?php echo $_GET['room']; ?></td></tr>
 		<tr><td>People</td><td>: </td><td id="user-count">: </td></tr>
 	</table>
-	
+
 	<form id="mform" onsubmit="sendmessage();return false;">
 		<input id="mmessage">
 		<input id="msubmit" type="submit">
