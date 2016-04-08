@@ -95,7 +95,6 @@ function createinfowindow(name,message){
 
 function sendmessage(){
 	var message = document.getElementById('mmessage');
-	message.value="";
 	if(message.value == "" ){
 		message.style.border="1px solid #660000";
 		return false;
@@ -107,4 +106,5 @@ function sendmessage(){
 		var obj = JSON.stringify({'type':"message",'username':username,'roomname':roomname,'message':message.value});
 		socket.send(obj);
 	}
+	message.value="";//clear content
 }
