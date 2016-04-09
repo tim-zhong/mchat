@@ -1,6 +1,6 @@
 <?php 
-//if(!isset($_COOKIE['user'])){header('Location: index.php');}
-//else{$c_username = $_COOKIE['user']; setcookie("user", "", time() - 3600);}
+if(!isset($_COOKIE['user'])){header('Location: index.php');}
+else{$c_username = $_COOKIE['user']; setcookie("user", "", time() - 3600);}
 include "connect.php";
 
 function findusers(){
