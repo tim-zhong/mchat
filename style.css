@@ -1,0 +1,148 @@
+body{
+	margin:0;
+	font-family:sans-serif;
+}		
+#map_wrapper {
+	position: absolute;
+    height: 100%;
+    width:100%;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
+}
+#room-info{
+	position: absolute;
+	top:0;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+	padding: 10px 20px;
+	font-size: 22px;
+	font-family: sans-serif;
+	color:#ffffff;
+	letter-spacing: 1px;
+}
+#mmessage{
+	position:fixed;
+	bottom:10px;
+	left:10px;
+	width:80%;
+	font-size:30px;
+}
+#mform{position: absolute;}
+#msubmit{display:none;}
+.chat_window{width:200px;}
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+
+/*========= history ==========*/
+#history{
+	background:rgba(0,0,0,0.5);
+	position:fixed;
+	bottom:60px;
+	height:83%;
+	padding:30px;
+	color:#ffffff;
+	width:300px;
+	-webkit-border-radius:0 5px 5px 0;
+	-moz-border-radius:0 5px 5px 0;
+	border-radius:0 5px 5px 0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-transition: left 250ms;
+	-moz-transition: left 250ms;
+	-o-transition: left 250ms;
+	transition: left 250ms;
+	font-weight:300;
+}
+.history_opened{
+	left:0;
+}
+.history_closed{
+	left:-300px;
+}
+#history_switch_wrap{
+	position:absolute;
+	top:50%;
+	right:-50px;
+}
+#history_switch{
+	-webkit-border-radius:0 10px 10px 0;
+	-moz-border-radius:0 10px 10px 0;
+	border-radius:0 10px 10px 0;
+	width:50px;
+	height:100px;
+	text-align: center;
+	background:rgba(0,0,0,0.5);
+	position: relative;
+	margin-top:-100%;
+	cursor:pointer;
+	padding-top:38px;
+	padding-left:18px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+}
+#history_title{
+	text-transform:uppercase;
+	font-size:30px;
+	letter-spacing:1px;
+}
+#history_content{
+	padding:10px;
+	border:1px solid #ababab;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	height:85%;
+	overflow:scroll;
+	margin-top:10px;
+	-webkit-box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.1) inset;
+	-moz-box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.1) inset;
+	box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.1) inset
+}
+.history_message{
+	margin: 10px 0;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:5px;
+	line-height:1.5em;
+	word-break: break-all;
+	background: rgba(0,0,0,0.3);
+}
+.history_message_name{
+	font-style: italic;
+}
+/*========= sprite & icons ==========*/
+.sprite{
+	background:url(images/sprite.png) no-repeat;
+	display:block;
+}
+.i_arrow_right{
+	width:12px;
+	height:21px;
+	background-position: 0 0;
+}
+.i_arrow_left{
+	width:12px;
+	height:21px;
+	background-position: -12px 0;
+}

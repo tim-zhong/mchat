@@ -1,6 +1,6 @@
 <?php 
-if(!isset($_COOKIE['user'])){header('Location: index.php');}
-else{$c_username = $_COOKIE['user']; setcookie("user", "", time() - 3600);}
+//if(!isset($_COOKIE['user'])){header('Location: index.php');}
+//else{$c_username = $_COOKIE['user']; setcookie("user", "", time() - 3600);}
 include "connect.php";
 
 function findusers(){
@@ -35,59 +35,10 @@ function findusers(){
 
 	<title>MapChat Room</title>
 	<meta name="description" content="The HTML5">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-	<style>
-		body{
-			margin:0;
-		}		
-		#map_wrapper {
-			position: absolute;
-		    height: 100%;
-		    width:100%;
-		}
-
-		#map_canvas {
-		    width: 100%;
-		    height: 100%;
-		}
-		#room-info{
-			position: absolute;
-			top:0;
-			right: 0;
-			background: rgba(0,0,0,0.5);
-			padding: 10px 20px;
-			font-size: 22px;
-			font-family: sans-serif;
-			color:#ffffff;
-			letter-spacing: 1px;
-		}
-		#mmessage{
-			position:fixed;
-			bottom:10px;
-			left:10px;
-			width:80%;
-			font-size:30px;
-		}
-		.cw_history{
-
-		}
-		#mform{position: absolute;}
-		#msubmit{display:none;}
-		.chat_window{width:200px;}
-
-		a[href^="http://maps.google.com/maps"]{display:none !important}
-		a[href^="https://maps.google.com/maps"]{display:none !important}
-
-		.gmnoprint a, .gmnoprint span, .gm-style-cc {
-		    display:none;
-		}
-		.gmnoprint div {
-		    background:none !important;
-		}
-	</style>
-
 	<div id="map_wrapper">
     	<div id="map_canvas" class="mapping"></div>
 	</div>
@@ -101,9 +52,31 @@ function findusers(){
 		<input id="msubmit" type="submit">
 	</form>
 
+	<div id="history" class="history_closed">
+		<div id="history_switch_wrap">
+			<div id="history_switch" onclick="togglehistory();">
+				<span id="history_switch_icon" class="i_arrow_right sprite"></span>
+			</div>
+		</div>
+		<div id="history_title">
+			History
+		</div>
+		<div id="history_content">
+			<div class="history_message">
+				<span class="history_message_name">Tim:</span>
+				<span class="history_message_body">Lorem Ipsum ldjl alsd ladla</span>
+			</div>
+			<div class="history_message">
+				<span class="history_message_name">Tim:</span>
+				<span class="history_message_body">Lorem Ipsum ldjl alsd ladlaas,jdcalsjkdnclakjscnlajdscnlasjdcnla</span>
+			</div>
+		</div>
+	</div>
+
 	<script src="jquery.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script src="wss/wss.js"></script>
+	<script src="mapchat.js"></script>
 	<script>
 	var bounds = new google.maps.LatLngBounds();
     var mapOptions = {

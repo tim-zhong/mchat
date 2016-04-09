@@ -81,6 +81,25 @@ function processasobj(s){
 		} else{
 			createinfowindow(obj.from, obj.message)
 		}
+		
+		//Append message to history
+		var history = document.getElementById('history_content');
+		
+		var message = document.createElement('div');
+		message.className = "history_message";
+		
+		var messagename = document.createElement('span');
+		messagename.className = "history_message_name";
+		messagename.innerHTML = obj.from;
+
+		var messagebody = document.createElement('span');
+		messagename.className = "history_message_body";
+		messagebody.innerHTML = obj.message;
+
+		message.appendChild(messagename);
+		message.appendChild(messagebody);
+		history.appendChild(message);
+
 	}
 }
 

@@ -83,6 +83,7 @@
 		width:250px;
 		font-size:20px;
 		-webkit-border-radius:30px;
+		-moz-border-radius:30px;
 		-ms-border-radius:30px;
 		-o-border-radius:30px;
 		position: relative;
