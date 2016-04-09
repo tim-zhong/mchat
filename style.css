@@ -72,6 +72,12 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 .history_closed{
 	left:-300px;
 }
+.history_closed .history_message{
+	opacity: 0;
+}
+.history_opened .history_message{
+	opacity: 1;
+}
 #history_switch_wrap{
 	position:absolute;
 	top:50%;
@@ -115,6 +121,10 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 	box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.1) inset
 }
 .history_message{
+	-webkit-transition: opacity 250ms;
+	-moz-transition: opacity 250ms;
+	-o-transition: opacity 250ms;
+	transition: opacity 250ms;
 	margin: 10px 0;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;

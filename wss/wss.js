@@ -99,6 +99,7 @@ function processasobj(s){
 		message.appendChild(messagename);
 		message.appendChild(messagebody);
 		history.appendChild(message);
+		history.scrollTop = history.scrollHeight;
 
 	}
 }
