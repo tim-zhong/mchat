@@ -90,10 +90,10 @@ function processasobj(s){
 		
 		var messagename = document.createElement('span');
 		messagename.className = "history_message_name";
-		messagename.innerHTML = obj.from;
+		messagename.innerHTML = obj.from+": ";
 
 		var messagebody = document.createElement('span');
-		messagename.className = "history_message_body";
+		messagebody.className = "history_message_body";
 		messagebody.innerHTML = obj.message;
 
 		message.appendChild(messagename);
