@@ -63,12 +63,8 @@ function findusers(){
 		</div>
 		<div id="history_content">
 			<div class="history_message">
-				<span class="history_message_name">Tim:</span>
-				<span class="history_message_body">Lorem Ipsum ldjl alsd ladla</span>
-			</div>
-			<div class="history_message">
-				<span class="history_message_name">Tim:</span>
-				<span class="history_message_body">Lorem Ipsum ldjl alsd ladlaas,jdcalsjkdnclakjscnlajdscnlasjdcnla</span>
+				<span class="history_message_name">Mapchat Bot:</span>
+				<span class="history_message_body">Welcome here! Enjoy your chat!</span>
 			</div>
 		</div>
 	</div>
