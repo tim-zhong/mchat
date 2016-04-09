@@ -64,7 +64,7 @@ function findusers(){
 		<div id="history_content">
 			<div class="history_message">
 				<span class="history_message_name">Mapchat Bot:</span>
-				<span class="history_message_body">Welcome here! Enjoy your chat!</span>
+				<span class="history_message_body">Welcome!</span>
 			</div>
 		</div>
 	</div>
