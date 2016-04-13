@@ -74,12 +74,6 @@ function processasobj(s){
 		//Update user count
 		document.getElementById('user-count').innerHTML = Object.size(markersarray);
 	}else if(obj.cmd == "message"){
-		//Tab notification
-		if(!wfocus){
-			favi.style.display = "none";
-			favia.style.display = "block";
-		}
-		//
 		console.log(document.getElementById('cw_history_'+obj.from));
 		var w = document.getElementById('cw_history_'+obj.from);
 		if(w){

@@ -2,9 +2,6 @@ body{
 	margin:0;
 	font-family:sans-serif;
 }		
-#favi_a{
-	display:none;
-}
 #map_wrapper {
 	position: absolute;
     height: 100%;
