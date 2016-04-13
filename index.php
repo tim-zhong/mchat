@@ -5,6 +5,7 @@
 
 	<title>MAP CHAT</title>
 	<meta name="description" content="The HTML5">
+	<link rel="icon" href="images/favi.png" sizes="32x32" />
 </head>
 
 <body>
