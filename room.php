@@ -36,6 +36,7 @@ function findusers(){
 	<title>MapChat Room</title>
 	<meta name="description" content="The HTML5">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="images/favi.png" sizes="32x32" />
 </head>
 
 <body>
