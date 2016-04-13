@@ -36,7 +36,8 @@ function findusers(){
 	<title>MapChat Room</title>
 	<meta name="description" content="The HTML5">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" href="images/favi.png" sizes="32x32" />
+	<link id="favi" rel="icon" href="images/favi.png" sizes="32x32" />
+	<link id="favi_a" rel="icon" href="images/favi-a.png" sizes="32x32" />
 </head>
 
 <body>
@@ -76,6 +77,13 @@ function findusers(){
 	<script src="mapchat.js"></script>
 	<script src="mapstyle.js"></script>
 	<script>
+// ======================= favicon nitofication ================= //
+	var wfocus = 1;
+	var favi = document.getElementById('favi');
+	var favia = document.getElementById('favi_a');
+// =======================  ================= //
+
+
 	var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         mapTypeId: 'roadmap',
@@ -155,6 +163,15 @@ function findusers(){
   			e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
   			return confirmationMessage;              // Gecko, WebKit, Chrome <34
   		}
+	});
+
+	window.addEventListener('focus', function(){
+		wfocus = 1;
+		favi.style.display = "block";
+		favia.style.display = "none";
+	});
+	window.addEventListener('blur', function(){
+		wfocus = 0;
 	});
 	</script>
 </body>
